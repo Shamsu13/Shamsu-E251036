@@ -1,0 +1,46 @@
+public class BankAccount {
+    private String accountHolder;
+    private String accountNumber;
+    private double balance;
+
+    public void setAccountHolder(String accountHolder) {
+        this.accountHolder = accountHolder;
+    }
+    public String getAccountHolder() {
+        return accountHolder;
+    }
+    public void setAccountNumber(String accountNumber) {
+        this.accountNumber = accountNumber;
+    }
+
+    public String getAccountNumber() {
+        return accountNumber;
+    }
+
+    public void setBalance(double balance) {
+        if (balance >= 0) {
+            this.balance = balance;
+        } else {
+            System.out.println("Invalid balance. Must be non-negative.");
+        }
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+
+    public void displayAccountInfo() {
+        System.out.println("Account Holder: " + accountHolder);
+        System.out.println("Account Number: " + accountNumber);
+        System.out.println("Account Balance: $" + balance);
+    }
+
+    public static void main(String[] args) {
+        BankAccount account1 = new BankAccount();
+
+        account1.setAccountHolder("Shamsu Alam");
+        account1.setAccountNumber("BA123456789");
+        account1.setBalance(1500.75);
+        account1.displayAccountInfo();
+    }
+}
